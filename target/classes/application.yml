@@ -1,2 +1,10 @@
 server:
   port: 8083
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:postgresql://ec2-52-206-182-219.compute-1.amazonaws.com:5432/de67l0mbn13e41
+    username: yvmzmyowrvuqjs
+    password: 248d0a50b7c761461718ef403502b1e6e03dc98b00b8f8b0b16d163541aea2c5
