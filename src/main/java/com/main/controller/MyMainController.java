@@ -1,0 +1,13 @@
+package com.main.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping
+public class MyMainController {
+    @RequestMapping
+    public String test(){
+        return "Success";
+    }
+}
