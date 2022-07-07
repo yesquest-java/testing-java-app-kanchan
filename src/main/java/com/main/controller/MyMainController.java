@@ -1,5 +1,6 @@
 package com.main.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,7 +10,8 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping
 public class MyMainController {
 
-
+    @Autowired
+    private GetController getController;
 
     @GetMapping
     public ModelAndView test(ModelAndView andView){
@@ -23,5 +25,11 @@ public class MyMainController {
         return andView;
     }
 
+    @GetMapping("/user")
+    public ModelAndView user(ModelAndView andView){
+        andView.addObject("user",getController.getAllUserById(2L));
+        andView.setViewName("user");
+        return andView;
+    }
 
 }

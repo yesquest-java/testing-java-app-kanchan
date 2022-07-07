@@ -36,7 +36,10 @@ public class GetController {
         return userRepository.findAll();
     }
 
-
+    @GetMapping("/getUser/{userId}")
+    public Users getAllUserById(@PathVariable("userId") Long userId){
+        return userRepository.findById(userId).orElse(null);
+    }
 
     @GetMapping("/getSites/{userId}")
     public List<Sites> getSites(@PathVariable(value = "userId",required = false) Long userId){
@@ -55,4 +58,5 @@ public class GetController {
         if(siteId==null) return null;
         return siteAlertContactsRepository.findBySiteId(siteId);
     }
+
 }
