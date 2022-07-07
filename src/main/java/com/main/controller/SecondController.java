@@ -23,4 +23,14 @@ public class SecondController {
     public List<MyMainModel> getAll(){
         return repo.findAll();
     }
+
+    @PostMapping("/add/user")
+    public MyMainModel addUser(@RequestBody(required = false) MyMainModel model) {
+        if(model == null) {
+            model=new MyMainModel();
+            model.setName("?");
+            return model;
+        }
+        return repo.save(model);
+    }
 }
