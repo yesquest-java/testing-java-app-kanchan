@@ -8,6 +8,9 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 @RequestMapping
 public class MyMainController {
+
+
+
     @GetMapping
     public ModelAndView test(ModelAndView andView){
         andView.setViewName("index");
@@ -19,5 +22,6 @@ public class MyMainController {
         andView.setViewName("admin");
         return andView;
     }
+
 
 }

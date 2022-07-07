@@ -30,8 +30,8 @@ public class Sites {
 
     private Long userId;
 
-    private boolean status;//run ay paused
+    private boolean status=true;//run ay paused
 
-    private Long  reportDuration;
+    private Long  reportDuration;//in day
 
 }
