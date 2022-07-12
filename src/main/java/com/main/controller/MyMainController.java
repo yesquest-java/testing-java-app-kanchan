@@ -25,10 +25,9 @@ public class MyMainController {
         return andView;
     }
 
-    @GetMapping("/user")
+    @GetMapping("/login")
     public ModelAndView user(ModelAndView andView){
-        andView.addObject("user",getController.getAllUserById(2L));
-        andView.setViewName("user");
+        andView.setViewName("login");
         return andView;
     }
 
