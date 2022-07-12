@@ -31,4 +31,10 @@ public class MyMainController {
         return andView;
     }
 
+    @GetMapping("/edit")
+    public ModelAndView edit(ModelAndView andView){
+        andView.setViewName("editor");
+        return andView;
+    }
+
 }
