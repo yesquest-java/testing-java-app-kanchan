@@ -207,7 +207,6 @@ holding the source image -->
         </div>
     </div>
 
-  <!--  <button class="btn btn-success" onclick="download()">Download</button>-->
 </div>
 
 <!-- Load the script for the editor -->
@@ -263,6 +262,7 @@ function applyFilter() {
 		") hue-rotate(" + hueRotateSlider.value + "deg" + ")";
 
 	// Apply the filter to the image
+	console.log(filterString);
 	context.filter = filterString;
 
 	// Draw the edited image to canvas
@@ -293,7 +293,7 @@ function funkyFilter() {
 
 	// Set a random hue rotation everytime
 	hueRotateSlider.value =
-		Math.floor(Math.random() * 360) + 1;
+	Math.floor(Math.random() * 360) + 1;
 	contrastSlider.value = 120;
 	applyFilter();
 }
@@ -339,15 +339,7 @@ function saveImage() {
 	// Click on the link to start the download
 	linkElement.click();
 }
-/*
 
-var download = function(){
-  var link = document.createElement('a');
-  link.download = 'filename.png';
-  link.href = document.getElementById('canvas').toDataURL()
-  link.click();
-}
-*/
 </script>
 </body>
 
