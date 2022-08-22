@@ -3,6 +3,8 @@ package com.main.controller;
 import com.main.dto.SiteContacts;
 import com.main.model.*;
 import com.main.repo.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,8 +12,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1")
+
 public class GetController {
 
+    public static final Logger logger= LoggerFactory.getLogger(GetController.class);
+    public static volatile int x=0;
     @Autowired
     private MyMainRepo repo;
     @Autowired
@@ -38,6 +43,8 @@ public class GetController {
 
     @GetMapping("/getUser/{userId}")
     public Users getAllUserById(@PathVariable("userId") Long userId){
+        logger.info("Request for user " + userId + " returned-"+x);
+        x++;
         return userRepository.findById(userId).orElse(null);
     }
 
